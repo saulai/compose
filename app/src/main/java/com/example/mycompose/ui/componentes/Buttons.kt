@@ -1,4 +1,4 @@
-package com.example.mycompose.ui.ejercicios
+package com.example.mycompose.ui.componentes
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border

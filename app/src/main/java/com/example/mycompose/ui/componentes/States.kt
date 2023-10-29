@@ -1,4 +1,4 @@
-package com.example.mycompose.ui.ejercicios
+package com.example.mycompose.ui.componentes
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
