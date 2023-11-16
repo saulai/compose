@@ -1,4 +1,4 @@
-package com.example.mycompose.navigation
+package com.example.mycompose.navigation.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
+import com.example.mycompose.navigation.presentation.routes.ScreenRoutes
 
 @Composable
 fun ScreenA(onNavigation: (String) -> Unit) {
@@ -38,26 +39,5 @@ fun ScreenB(onNavigation: (String) -> Unit) {
         verticalArrangement = Arrangement.Center
     ) {
         Text("Screen B", color = Color.White, fontSize = 30.sp)
-    }
-}
-
-@Composable
-fun ScreenC(onNavigation: (String) -> Unit, id: String?) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.DarkGray)
-            .clickable { onNavigation(ScreenRoutes.A.address) },
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text("Screen C", color = Color.White, fontSize = 30.sp)
-        id?.let {
-            Text(
-                text = "Este es el id que me has pasado: $id",
-                color = Color.White,
-                fontSize = 30.sp
-            )
-        }
     }
 }

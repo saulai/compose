@@ -42,7 +42,6 @@ fun TextFields() {
             label = { Text(text = "Esto es un hint") },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = Color.Blue,
-
                 cursorColor = Color.Red,
                 unfocusedBorderColor = Color.Cyan
             )

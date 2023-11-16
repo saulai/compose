@@ -1,4 +1,4 @@
-package com.example.mycompose.navigation
+package com.example.mycompose.navigation.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,6 +12,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.mycompose.navigation.presentation.routes.ScreenRoutes
+import com.example.mycompose.navigation.presentation.screenC.ScreenC
+import com.example.mycompose.navigation.presentation.screenC.ScreenCViewModel
 import com.example.mycompose.ui.theme.MyComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,7 +50,8 @@ class MainActivity : ComponentActivity() {
                             content = { navBackStackEntry ->
                                 ScreenC(
                                     onNavigation,
-                                    navBackStackEntry.arguments?.getString("id")
+                                    navBackStackEntry.arguments?.getString("id"),
+                                    ScreenCViewModel()
                                 )
                             })
                     }

@@ -1,4 +1,4 @@
-package com.example.mycompose.navigation
+package com.example.mycompose.navigation.presentation.routes
 
 sealed class ScreenRoutes(val address: String) {
     object A: ScreenRoutes("A")
