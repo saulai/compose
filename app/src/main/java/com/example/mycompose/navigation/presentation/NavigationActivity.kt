@@ -17,7 +17,7 @@ import com.example.mycompose.navigation.presentation.screenC.ScreenC
 import com.example.mycompose.navigation.presentation.screenC.ScreenCViewModel
 import com.example.mycompose.ui.theme.MyComposeTheme
 
-class MainActivity : ComponentActivity() {
+class NavigationActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
