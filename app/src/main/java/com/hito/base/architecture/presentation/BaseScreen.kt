@@ -12,12 +12,11 @@ abstract class BaseScreen<
         M : BaseFeatureMapper<R>>(
     private val viewModel: VM,
     private val navigator: Navigator<R, M>,
-    featureMapper: M
 ) {
+
 
     init {
         viewModel.initializeViewModel(::onState)
-        navigator.addFeatureMapper(featureMapper)
     }
 
     protected fun emitAction(action: A) {

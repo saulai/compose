@@ -1,3 +1,5 @@
 package com.hito.base.architecture.navigation
 
-open class BaseRoute(val address: String)
+open class BaseRoute(private val address: String){
+    open fun findAddress() = address
+}

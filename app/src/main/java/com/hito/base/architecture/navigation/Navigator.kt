@@ -2,17 +2,16 @@ package com.hito.base.architecture.navigation
 
 import com.hito.base.architecture.exception.DuplicateRouteException
 
-class Navigator<R : BaseRoute, M : BaseFeatureMapper<R>> {
+class Navigator<R : BaseRoute, M : BaseFeatureMapper<R>>(private val featureMappers: List<M>) {
 
-    private val featureMappers = mutableListOf<M>()
-
-    fun addFeatureMapper(featureMapper: M) {
-        checkDuplicates(featureMapper)
-        featureMappers.add(featureMapper)
+    init {
+        featureMappers.forEach {
+            checkDuplicates(it)
+        }
     }
 
     fun navigate(route: R) {
-        featureMappers.onEach { it.mapRoute(route) }
+        featureMappers.forEach { it.mapRoute(route) }
     }
 
     private fun checkDuplicates(featureMapper: M) {
