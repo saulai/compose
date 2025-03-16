@@ -1,28 +1,15 @@
 package com.hito.base.architecture.presentation
 
-import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.ui.Modifier
-import androidx.navigation.compose.rememberNavController
-import com.example.mycompose.ui.theme.MyComposeTheme
+import androidx.navigation.NavHostController
 import com.hito.base.architecture.navigation.BaseFeatureMapper
 import com.hito.base.architecture.navigation.BaseRoute
 
-class BaseActivity(private val featureMapper: BaseFeatureMapper<BaseRoute>) : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MyComposeTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background
-                ) {
-                    featureMapper.setNavController(rememberNavController())
-                }
-            }
-        }
+abstract class BaseActivity(private val featureMapper: BaseFeatureMapper<BaseRoute>) : ComponentActivity() {
+
+    protected fun setNavController(navHostController: NavHostController){
+        featureMapper.setNavController(navHostController)
     }
+
+    abstract fun setTheme()
 }
